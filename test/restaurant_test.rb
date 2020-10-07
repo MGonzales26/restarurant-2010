@@ -80,4 +80,12 @@ class RestaurantTest < Minitest::Test
     assert_equal "Fuel Cafe will be closing at 11:00AM", restaurant1.announce_closing_time(5)
     assert_equal "Il Posto will be closing at 11:00PM", restaurant2.announce_closing_time(7)
   end
+
+  def test_it_can_announce_different_closing_times
+    restaurant1 = Restaurant.new('16:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('12:00', 'Il Posto')
+
+    assert_equal "Fuel Cafe will be closing at 9:00PM", restaurant1.announce_closing_time(5)
+    assert_equal "Il Posto will be closing at 7:00PM", restaurant2.announce_closing_time(7)
+  end
 end
