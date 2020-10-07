@@ -25,4 +25,12 @@ class Restaurant
       false
     end
   end
+
+  def menu_dish_names
+    exciting_menu = []
+    @dishes.each do |dish|
+      exciting_menu << dish.upcase
+    end
+    exciting_menu
+  end
 end
